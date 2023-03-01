@@ -1,5 +1,6 @@
 <template>
   <div class="curd-product">
+    <h1>Product crud page</h1>
 
   </div>
 </template>

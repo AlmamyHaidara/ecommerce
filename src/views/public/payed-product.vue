@@ -1,16 +1,14 @@
 <template>
   <div class="payed-product">
+    <h1>Product payements</h1>
 
   </div>
 </template>
 
 <script>
 export default {
-    name:'Payed-Product',
-
-}
+  name: "PayedProductVue",
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

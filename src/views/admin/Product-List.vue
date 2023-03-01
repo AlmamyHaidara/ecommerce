@@ -1,5 +1,6 @@
 <template>
   <div class="product-list">
+    <h1>Public Layout</h1>
 
   </div>
 </template>
