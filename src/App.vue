@@ -1,8 +1,17 @@
 <template>
   <div>
-    <nav></nav>
+    <NavBarVue class="nav" />
     <router-view />
   </div>
 </template>
-
-<style></style>
+<script>
+import NavBarVue from "@/components/public/NavBar.vue";
+export default {
+  components: { NavBarVue },
+};
+</script>
+<style scoped>
+.nav .navbar{
+  z-index: 100;
+}
+</style>
