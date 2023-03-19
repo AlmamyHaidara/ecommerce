@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBarVue class="nav" />
+    <!-- <NavBarVue class="nav" /> -->
     <router-view />
   </div>
 </template>
@@ -10,8 +10,16 @@ export default {
   components: { NavBarVue },
 };
 </script>
-<style scoped>
-.nav .navbar{
+<style>
+:root {
+  --color1: #22c55e;
+  --color2: #f59e0b;
+  --color3: #f8f9fa;
+}
+.nav .navbar {
   z-index: 100;
+}
+li {
+  list-style: none;
 }
 </style>

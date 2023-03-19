@@ -2,7 +2,7 @@
   <div class="layout-public">
     <Header class="mt-3" />
     <NavBarVue  />
-    <FistProduct class="firstProdct  mx-auto" />
+    <FistProduct class="firstProdct  mx-auto " />
     <ContactVue />
 
     <!-- <router-view></router-view> -->
@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .firstProdct{
-  margin-top: 40rem ;
+  margin-top: 48rem ;
 
 }
 </style>
