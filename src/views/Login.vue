@@ -331,22 +331,7 @@ input {
   margin-top: 1rem;
   margin-left: -20rem;
 }
-/* .submitbtn {
-  width: 10rem;
-  height: 2.5rem;
-  color: aliceblue;
-  font-weight: bold;
-  position: relative;
-  top: -2rem !important;
-  left: 18rem;
-  border: 0;
-  border-radius: 20px !important;
-  background: linear-gradient(
-    59deg,
-    rgba(172, 86, 17, 1) 46%,
-    rgba(225, 167, 19, 0.6980042016806722) 100%
-  );
-} */
+z
 .field {
   width: 18rem;
   height: 2.2rem;

@@ -1,18 +1,27 @@
 <template>
   <div class="product-list">
-    <h1>Public Layout</h1>
+    <!-- <h1>Public Layout</h1> -->
     <div class="box d-flex">
-      <div class="add-product mt-5 ms-5 shadow p-3 mb-5 bg-body rounded">
-        <h4 class="mt-3">Ajout de nouvelle produit</h4>
+      <div class="add-product mt-3 ms-5 shadow p-3 mb-5 bg-body rounded">
+        <!-- <h4 class="mt-3">Ajout de nouvelle produit</h4> -->
         <form action="#">
-          <div class="field mt-5">
+          <div class="field">
+            <FileUpload
+              name="demo[]"
+              url="./upload.php"
+              @upload="onAdvancedUpload($event)"
+              :multiple="true"
+              accept="image/*"
+              :maxFileSize="1000000"
+            >
+              <template #empty>
+                <p>Drag and drop files to here to upload.</p>
+              </template>
+            </FileUpload>
+          </div>
+          <div class="field mt-3">
             <label for="nameProduct">Nom</label>
-            <input
-              type="text"
-              name="nameProduct"
-              class="form-control"
-              v-model="name_product"
-            />
+            <InputText type="text" v-model="name_product" class="row nom" />
           </div>
           <div class="field mt-3">
             <label for="descriptionfield">Description</label>
@@ -22,11 +31,19 @@
               class="form-control"
               v-model="name_product"
             /> -->
-            <textarea
+            <!-- <textarea
               class="form-control"
               aria-label="With textarea"
               name="descriptionfield"
-            ></textarea>
+            ></textarea> -->
+            <Textarea
+              v-model="value"
+              autoResize
+              rows="1"
+              cols="44"
+              name="descriptionfield"
+              class="row"
+            />
           </div>
           <div class="field mt-3">
             <label for="selector" class="row ms-1">Inventair satue</label>
@@ -84,20 +101,37 @@
             </div>
           </div>
           <div class="field row mt-3">
-            <div class="price-field col">
+            <div class="price-field row">
               <label for="price">prix</label>
-              <input class="form-control" type="text" name="price" />
+              <InputNumber
+                v-model="value2"
+                inputId="currency-germany"
+                mode="currency"
+                currency="CFA"
+                locale="de-DE"
+                class="price"
+              />
             </div>
-            <div class="quantiter-field col">
+            <div class="quantiter-field row mt-3">
               <label for="quantite">Quantiter</label>
-              <input type="text" name="quantiter" id="" class="form-control" />
+              <InputNumber
+                v-model="value1"
+                inputId="integeronly"
+                name="quantiter"
+              />
             </div>
           </div>
-          <div class="btn btn-val">Valider</div>
+          <!-- <div class="btn btn-val">Valider</div> -->
+          <Button
+            label="Save"
+            icon="pi pi-check"
+            class="p-button-text btn-val"
+            @click="saveProduct"
+          />
         </form>
       </div>
       <!-- List des produit ajouter -->
-      <div class="list-product mt-5 ms-4 shadow p-3 mb-5 bg-body rounded">
+      <div class="list-product mt-3 ms-4 shadow p-3 mb-5 bg-body rounded">
         <div class="top-bar d-flex">
           <h4>List des produits</h4>
           <input
@@ -110,7 +144,10 @@
         <div class="top-second">
           <span class="title">
             <ul class="d-flex">
-              <input type="checkbox" aria-label="Checkbox for following text input" />
+              <input
+                type="checkbox"
+                aria-label="Checkbox for following text input"
+              />
 
               <li class="p-2">
                 Code <i class="fas fa-arrow-right-arrow-left ps-1 ms-2 dir"></i>
@@ -186,13 +223,6 @@
             </ul>
           </div>
         </div>
-        <!-- <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one</li>
-        </ul> -->
       </div>
     </div>
   </div>
@@ -210,6 +240,9 @@ export default {
 </script>
 
 <style>
+.nom {
+  width: 28rem;
+}
 .custom-select {
   width: 27.9rem;
   height: 2.5rem;
@@ -219,13 +252,13 @@ export default {
 }
 .add-product {
   width: 30rem;
-  height: 50rem;
+  height: 56rem;
   border-radius: 10px;
   background: #f7f4f4;
 }
 .list-product {
   width: 65rem;
-  height: 50rem;
+  height: 56rem;
   background: #f7f4f4;
 }
 input[type="radio"] {
@@ -237,18 +270,15 @@ input[type="radio"] {
   margin-top: -3rem;
 }
 .btn-val {
-  width: 15rem;
-  background: #0d6dfd8a !important;
-  margin: 6rem 6rem;
-  color: #fff !important;
-  font-weight: bold !important;
-  font-size: 20px !important;
+  margin: 1.5rem !important;
+  float: right;
+  margin-right: 1rem;
 }
-.btn-val:hover {
+/* .btn-val:hover {
   background: transparent !important;
   border: 3px solid #0d6dfd8a !important;
   color: #0d6dfd8a !important;
-}
+} */
 .top-bar {
   background: #ced4da9c;
   height: 4rem;
