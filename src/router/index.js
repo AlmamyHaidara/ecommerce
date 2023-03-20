@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import * as publicLayout from '@/views/public/index'
 import * as adminLayout from '@/views/admin/index'
 import { authGoard } from "@/_helper/auth_goard";
-import LoginVue from "@/views/Login.vue";
+// import LoginVue from "@/views/Login.vue";
+import connexionVue from "@/views/Connexion.vue";
 // localStorage.setItem('token', 'jtrhguygt_yy')
 const routes = [
   {
@@ -54,7 +55,7 @@ const routes = [
   },{
     path:'/login',
     name:'Login',
-    component: LoginVue
+    component: connexionVue
   }
 ];
 

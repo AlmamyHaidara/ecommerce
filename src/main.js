@@ -32,6 +32,16 @@ import DataView from 'primevue/dataview'
 import Rating from "primevue/rating"
 import Tag from 'primevue/tag'
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
+import Password from "primevue/password"
+import Toast from "primevue/toast"
+import InlineMessage from "primevue/inlinemessage"
+
+
+
+
+
+
+
 const app = createApp(App);
 //App User
 app.use(store);
@@ -52,6 +62,9 @@ app.component("DataView", DataView);
 app.component("Rating", Rating);
 app.component("Tag",Tag);
 app.component("DataViewLayoutOptions",DataViewLayoutOptions);
+app.component("Password",Password)
+app.component("Toast",Toast)
+app.component("InlineMessage",InlineMessage)
 
 
 
