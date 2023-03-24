@@ -1,14 +1,15 @@
 <template>
   <div class="product-list">
     <!-- <h1>Public Layout</h1> -->
-    <div class="box d-flex">
-      <div class="add-product mt-3 ms-5 shadow p-3 mb-5 bg-body rounded">
+    <div class="box d-flex ">
+      <div class="add-product mt-5 ms-3 shadow p-3 mb-5 bg-body rounded">
         <!-- <h4 class="mt-3">Ajout de nouvelle produit</h4> -->
         <form action="#">
-          <div class="field">
+          <div class="fields-upload">
+            <Toast />
             <FileUpload
               name="demo[]"
-              url="./upload.php"
+              url="./upload.js"
               @upload="onAdvancedUpload($event)"
               :multiple="true"
               accept="image/*"
@@ -19,11 +20,11 @@
               </template>
             </FileUpload>
           </div>
-          <div class="field mt-3">
+          <div class="field">
             <label for="nameProduct">Nom</label>
             <InputText type="text" v-model="name_product" class="row nom" />
           </div>
-          <div class="field mt-3">
+          <div class="field  mt-5">
             <label for="descriptionfield">Description</label>
             <!-- <input
               type="text"
@@ -45,7 +46,7 @@
               class="row"
             />
           </div>
-          <div class="field mt-3">
+          <div class="field mt-5">
             <label for="selector" class="row ms-1">Inventair satue</label>
             <select class="custom-select" name="selector">
               <option selected>Choose...</option>
@@ -54,11 +55,11 @@
               <option value="3">Three</option>
             </select>
           </div>
-          <div class="field mt-3">
+          <div class="field mt-5">
             <label for="radio_option" class="ms-2">Categorie</label>
-            <div class="radio-list row mt-4">
+            <div class="radio-list row mt-3">
               <div class="radio-left col">
-                <div class="radio">
+                <div class="radio" >
                   <input
                     type="radio"
                     name="done"
@@ -100,8 +101,8 @@
               </div>
             </div>
           </div>
-          <div class="field row mt-3">
-            <div class="price-field row">
+          <div class="field row  pri">
+            <div class="price-field row mt-5">
               <label for="price">prix</label>
               <InputNumber
                 v-model="value2"
@@ -112,7 +113,7 @@
                 class="price"
               />
             </div>
-            <div class="quantiter-field row mt-3">
+            <div class="quantiter-field row">
               <label for="quantite">Quantiter</label>
               <InputNumber
                 v-model="value1"
@@ -131,7 +132,7 @@
         </form>
       </div>
       <!-- List des produit ajouter -->
-      <div class="list-product mt-3 ms-4 shadow p-3 mb-5 bg-body rounded">
+      <div class="list-product mt-5 ms-4 shadow p-3 mb-5 bg-body rounded">
         <div class="top-bar d-flex">
           <h4>List des produits</h4>
           <input
@@ -217,8 +218,8 @@
               <li class="p-2">Statue</li>
               <li class="p-2">Quantiter</li>
               <li class="p-2">
-                <div class="btn pen"><i class="fa-solid fa-pen"></i></div>
-                <div class="btn croix"><i class="fa-solid fa-xmark"></i></div>
+                <div class="btn pen" title="Update"><i class="fa-solid fa-pen"></i></div>
+                <div class="btn croix" title="Delete"><i class="fa-solid fa-xmark"></i></div>
               </li>
             </ul>
           </div>
@@ -229,6 +230,7 @@
 </template>
 
 <script>
+import { useToast } from "primevue/usetoast";
 export default {
   name: "Produit-List",
   data() {
@@ -236,10 +238,34 @@ export default {
       name_product: "",
     };
   },
+  methods: {
+    onAdvancedUpload: () => {
+      const toast = useToast();
+      toast.add({
+        severity: "info",
+        summary: "Success",
+        detail: "File Uploaded",
+        life: 3000,
+      });
+    },
+  },
 };
 </script>
 
-<style>
+<style >
+.box{
+  height: 56rem;
+}
+.field-upload{
+  width: 24rem !important;
+  height: 7rem;
+}
+.field{
+  margin-top: 1rem !important;
+}
+.field input{
+  margin-bottom: 5rem !important;
+}
 .nom {
   width: 28rem;
 }
@@ -260,6 +286,7 @@ export default {
   width: 65rem;
   height: 56rem;
   background: #f7f4f4;
+  
 }
 input[type="radio"] {
   border: 0px;
@@ -270,15 +297,11 @@ input[type="radio"] {
   margin-top: -3rem;
 }
 .btn-val {
-  margin: 1.5rem !important;
+  margin-top: 10rem !important;
+  margin-left: 5rem !important;;
   float: right;
   margin-right: 1rem;
 }
-/* .btn-val:hover {
-  background: transparent !important;
-  border: 3px solid #0d6dfd8a !important;
-  color: #0d6dfd8a !important;
-} */
 .top-bar {
   background: #ced4da9c;
   height: 4rem;
@@ -358,5 +381,23 @@ input[type="checkbox"] {
   width: 2.5rem;
   height: 2.5rem;
   margin-left: 10px;
+}
+.upload{
+  width: 20rem;
+}
+.radio{
+  margin-bottom: -2rem;
+}
+
+.quantiter-field {
+  margin-top: -4rem !important;
+}
+
+.pri {
+    margin-top: 5rem !important;
+    height: 5rem;
+}
+.b-example-vr {
+    height: 100vh;
 }
 </style>

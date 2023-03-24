@@ -4,6 +4,7 @@ import * as adminLayout from '@/views/admin/index'
 import { authGoard } from "@/_helper/auth_goard";
 // import LoginVue from "@/views/Login.vue";
 import connexionVue from "@/views/Connexion.vue";
+import * as upload from '@/views/admin/upload'
 // localStorage.setItem('token', 'jtrhguygt_yy')
 const routes = [
   {
@@ -50,6 +51,10 @@ const routes = [
         path:'list-products',
         name:'ListProducts',
         component:adminLayout.ProductListVue
+      },{
+        path:'upload.js',
+        name:'Upload',
+        component: upload
       }
     ]
   },{

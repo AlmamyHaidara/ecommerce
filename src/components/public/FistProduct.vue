@@ -34,9 +34,17 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute" @click="toggleBox()">
+                <!-- <div
+                  class="btn bg-danger panier position-absolute"
+                  @click="toggleBox()"
+                >
                   <i class="fas fa-basket-shopping"></i>
-                </div>
+                </div> -->
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
             <li class="list-group-item col-sm p-3 list-item">
@@ -53,9 +61,11 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute">
-                  <i class="fas fa-basket-shopping"></i>
-                </div>
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
             <li class="list-group-item col-sm p-3 list-item">
@@ -72,9 +82,11 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute">
-                  <i class="fas fa-basket-shopping"></i>
-                </div>
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
             <li class="list-group-item col-sm p-3 list-item">
@@ -91,9 +103,11 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute">
-                  <i class="fas fa-basket-shopping"></i>
-                </div>
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
             <li class="list-group-item col-sm p-3 list-item">
@@ -110,9 +124,11 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute">
-                  <i class="fas fa-basket-shopping"></i>
-                </div>
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
             <li class="list-group-item col-sm p-3 list-item">
@@ -129,9 +145,11 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute">
-                  <i class="fas fa-basket-shopping"></i>
-                </div>
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
             <li class="list-group-item col-sm p-3 list-item">
@@ -148,9 +166,11 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute">
-                  <i class="fas fa-basket-shopping"></i>
-                </div>
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
             <li class="list-group-item col-sm p-3 list-item">
@@ -167,12 +187,24 @@
                 <div class="prix mx-auto">
                   <p class="price text-danger text-center">$152</p>
                 </div>
-                <div class="btn bg-danger panier position-absolute">
-                  <i class="fas fa-basket-shopping"></i>
-                </div>
+
+                <Button
+                  icon="pi pi-shopping-cart"
+                  @click="visibleRight = true"
+                  class="panier position-absolute bg-danger border-0"
+                />
               </div>
             </li>
           </ul>
+          <Sidebar v-model:visible="visibleRight" position="right">
+            <h2>Right Sidebar</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </Sidebar>
         </div>
       </div>
     </div>
@@ -191,6 +223,7 @@ export default {
       showBox: false,
       salut: "Bonjour",
       src: require("@/assets/headaer.jpg"),
+      visibleRight: false,
     };
   },
   methods: {

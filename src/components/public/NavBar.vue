@@ -34,7 +34,9 @@
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/list-products">List des produits</router-link>
+              <router-link class="nav-link" to="/list-products"
+                >List des produits</router-link
+              >
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/contact">Contact</router-link>
@@ -46,7 +48,11 @@
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-          <div class="btn connexion bg-danger"><router-link to="/login">Connexion</router-link></div>
+          <router-link to="/login" class="text-light bg-light rounded-2 border-0">
+            <Button label="Connextion" severity="wight" outlined/> 
+          </router-link>
+
+          <!-- <div class="btn connexion bg-danger"><router-link to="/login">Connexion</router-link></div> -->
           <!-- Icon -->
           <!-- <a class="text-reset me-3" href="#">
             <i class="fas fa-shopping-cart"></i>
@@ -132,8 +138,8 @@ export default {
 </script>
 
 <style scoped>
-.navbar{
-  position:absolute;
+.navbar {
+  position: absolute;
   top: 0;
   width: 100% !important;
   z-index: 100;
@@ -148,7 +154,7 @@ export default {
   
   border: 2px solid #1058bd;
 } */
-.connexion a{
+.connexion a {
   color: #f1f1f1;
   text-decoration: none;
   /* font-size: 20px;

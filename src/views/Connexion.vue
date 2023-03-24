@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <NavBar/>
     <div class="card mx-auto login-card">
       <div class="img">
         <img
@@ -41,11 +42,13 @@
 
 <script>
 import Login from "./Login.vue";
+import NavBar from '@/components/public/NavBar.vue';
 import Register from "./register.vue";
 export default {
   components: {
     Login,
     Register,
+    NavBar
   },
   data() {
     return {

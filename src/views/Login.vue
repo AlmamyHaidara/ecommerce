@@ -12,6 +12,7 @@
             v-model="datalog.email"
             class="form-control"
             placeholder="Email"
+            title="email@gmail.com"
           />
         </div>
         <div class="field">
@@ -20,6 +21,7 @@
             v-model="datalog.password"
             toggleMask
             placeholder="password"
+            title="password"
           />
         </div>
         <div class="btnsection">
@@ -69,21 +71,6 @@ export default {
 };
 </script>
 
-<style>
-.p-input-icon-right > .p-inputtext {
-  padding: 7px 0.5rem;
-  width: -231rem !important;
-}
-.p-inputtext {
-  margin: 2rem 1rem 0rem -0rem !important;
-  width: 18rem !important;
-  /* padding: 1rem 5rem; */
-}
-.p-input-icon-left > i,
-.p-input-icon-right > i {
-  position: absolute;
-  top: 50%;
-  margin-top: 0.5rem !important;
-  margin-right: 1rem !important;
-}
+<style scoped>
+
 </style>

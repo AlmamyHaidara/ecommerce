@@ -1,7 +1,7 @@
 <template>
   <div class="layout-admin d-flex">
     <!-- <h1>Layout admin page</h1> -->
-    <SideBar/>
+    <SideBar class="side"/>
     <!-- <topBar/> -->
     <router-view />
   </div>
@@ -17,5 +17,8 @@ export default {
 </script>
 
 <style>
-.layout-admin{}
+.side{
+  margin-left: 1.5rem;
+  margin-top: -2rem;
+}
 </style>
